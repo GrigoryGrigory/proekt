@@ -1,25 +1,26 @@
-open class Person(protected val name: String, protected val age: Int){
+open class Animal(val name: String, val age: Int){
     fun walk(){
         println("$name can walk")
     }
 }
 
-class Driver(
+class Flyer(
     name: String,
-    age: Int,
-    val experience: Int
-):  Person(name, age){
-    fun drive(){
-        println("$name can drive")
+    age: Int
+):  Animal(name, age){
+    fun fly(){
+        println("$name can fly")
     }
 }
 
 fun main(){
-    val person1 = Person("Иван",15)
-    val person2 = Person("Иоан",16)
-    val driver1 = Driver("Карл",33,10)
-    val people = ListOf<Person>(person1, person2, driver1)
-    for (person in people){
-        person.walk
+    val animal1 = Animal("gorilla",15)
+    val animal2 = Flyer("blackbird",16)
+    val animal4 = Flyer("hawk",14)
+    val animal3 = Animal("tiger",33)
+
+    val creatures = listOf<Animal>(animal1, animal2, animal3, animal4)
+    for (animal in creatures){
+        animal.walk()
     }
 }
